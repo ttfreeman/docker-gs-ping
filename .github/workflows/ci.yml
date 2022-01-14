@@ -53,5 +53,5 @@ jobs:
         with:
           url: https://prod-87.westus.logic.azure.com:443/workflows/d9768419fea4424f8957ded45585d297/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=D942f2Ws8xbkE_if_QuI9PvEk_hnBIW3LcTQzJaZ2XY
           method: POST
-          payload: '{"name": "${{ env.MY_NAME }}"}'
+          payload: '{"eventName": "cicd","payload":"{\"nextUrl\":\"google.com\"}"}'
           headers: '{"Content-Type": "application/json"}'
