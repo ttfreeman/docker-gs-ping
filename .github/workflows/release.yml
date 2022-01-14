@@ -1,9 +1,10 @@
 name: Release to Docker Hub
 
 on:
-  push:
-    tags:
-      - "*.*.*"
+#   push:
+#     tags:
+#       - "*.*.*"
+  repository_dispatch:
 
 jobs:
   release:
