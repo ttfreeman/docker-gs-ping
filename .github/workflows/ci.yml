@@ -47,3 +47,23 @@ jobs:
 
       - name: Run functional tests
         run:  go test -v ./...
+        
+      - name: Create an event for servicenow
+        run: |
+          status=`curl --write-out '%{http_code}' \
+          --silent \
+          --output /dev/null \
+          --request POST \
+          --header 'content-type: application/json' \
+          --url 'https://prod-87.westus.logic.azure.com:443/workflows/d9768419fea4424f8957ded45585d297/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=D942f2Ws8xbkE_if_QuI9PvEk_hnBIW3LcTQzJaZ2XY' \
+          --data '{ \
+          "eventName": "cicd", \
+           "payload": "{\"nextUrl\":\"hello\","ci":"c122389","email":"test@test.com"}" \
+          }'`
+
+          if [ $status!="200" ] 
+          then
+              echo "FAILURE"
+          else
+              echo "SUCCESS"
+          fi
