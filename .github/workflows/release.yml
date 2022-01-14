@@ -5,7 +5,9 @@ on:
 #     tags:
 #       - "*.*.*"
   repository_dispatch:
-
+    types: run-release
+  schedule:
+    - cron:  '*/5 * * * *'
 jobs:
   release:
     runs-on: ubuntu-latest
