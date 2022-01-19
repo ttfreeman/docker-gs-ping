@@ -53,5 +53,5 @@ jobs:
         with:
           url: https://prod-87.westus.logic.azure.com:443/workflows/d9768419fea4424f8957ded45585d297/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=D942f2Ws8xbkE_if_QuI9PvEk_hnBIW3LcTQzJaZ2XY
           method: POST
-          payload: '{"eventName": "cicd","payload":"{\"nextUrl\":\"https://api.github.com/repos/ttfreeman/docker-gs-ping/dispatches\",\"nextEventType\":\"run-release\",\"configurationItem\",\"8cc01fe61b858914056feac8ec4bcb52\"}"}'
+          payload: '{"eventName": "cicd","payload":"{\"nextUrl\":\"https://api.github.com/repos/ttfreeman/docker-gs-ping/dispatches\"}"}'
           headers: '{"Content-Type": "application/json"}'
